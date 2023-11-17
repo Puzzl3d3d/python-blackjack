@@ -162,7 +162,10 @@ def doGame():
     printList(dealerCards)
         
     while True:
-        choice = input("Hit or stand? ")
+        while True:
+            choice = input("Hit or stand? ")
+            if len(choice) == 1 and choice in ["h", "s"]: break
+            else: print("Invalid choice (h / s)")
         if choice.lower()[0] != "h":
             #playerStopped = True
             break
@@ -202,16 +205,18 @@ def main():
     
     while True:
         while True:
+            bet = 0
             try:
                 bet = int(input(f"What's your bet (You have ${money})? "))
             except:
                 print("Not a valid number")
-            if bet > money:
-                print("Not enough money")
-            elif bet <= 0:
-                print("Too low!")
             else:
-                break
+                if bet > money:
+                    print("Not enough money")
+                elif bet <= 0:
+                    print("Too low!")
+                else:
+                    break
         
         if bet == money:
             print("ALL IN!")
