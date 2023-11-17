@@ -140,6 +140,7 @@ def hitCardPlayer(*a, p=True):
 def doGame():
     global playerCards
     global dealerCards
+    global cardsChosen
     
     clear()
     
