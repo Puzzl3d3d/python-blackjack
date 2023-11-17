@@ -229,7 +229,7 @@ def main():
             print("Oops, you ran out of money!")
             break
         
-    playAgain = print("Wanna try again? ")
+    playAgain = input("Wanna try again? ")
     if playAgain == "" or playAgain.lower()[0] == "n":
         return
     else:
